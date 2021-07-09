@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".search.SearchResultsFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:scrimVisibleHeightTrigger="@dimen/search_results_scrim_trigger"
+            app:contentScrim="@color/background"
+            app:titleEnabled="false"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/pd_32"
+                android:paddingStart="@dimen/pd_16"
+                android:paddingEnd="@dimen/pd_16"
+                android:paddingBottom="@dimen/pd_16">
+
+                <TextView
+                    android:id="@+id/search_results_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/search_results"
+                    android:textAppearance="@style/heading_small"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+
+
+                <EditText
+                    android:id="@+id/search_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text|textNoSuggestions"
+                    android:textCursorDrawable="@null"
+                    android:backgroundTint="?colorPrimary"
+                    app:layout_constraintTop_toBottomOf="@+id/search_results_title"
+                    android:hint="@string/search_results_hint" />
+
+                <TextView
+                    android:id="@+id/results_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="44dp"
+
+                    android:textAppearance="@style/body_medium_bold"
+                    app:layout_constraintEnd_toStartOf="@+id/selected_category"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/search_input"
+                    tools:text="2000 resultados" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/selected_category"
+                    style="@style/button_secondary_round"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:ellipsize="end"
+                    android:maxWidth="150dp"
+                    android:maxLines="1"
+                    android:textSize="@dimen/text_small"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@+id/more_filters"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/results_count"
+                    app:layout_constraintTop_toBottomOf="@+id/search_input"
+                    tools:text="Autos y motos"
+                    tools:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/more_filters"
+                    style="@style/button_primary_round"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="@string/filters"
+                    android:textSize="@dimen/text_small"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/selected_category"
+                    app:layout_constraintTop_toBottomOf="@+id/search_input"
+                    tools:visibility="visible" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:elevation="@dimen/appbar_elevation"
+                app:layout_collapseMode="pin">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/toolbar_search_view"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/constraint_layout"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        <com.gabo.finder.common.components.StateView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/state_view"
+            app:targetView="@id/recycler_view"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

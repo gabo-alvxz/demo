@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="seller_reputation_gold">Gold</string>
+    <string name="seller_reputation_platinum">Platinum</string>
+    <string name="seller_reputation_silver">Silver</string>
+</resources>

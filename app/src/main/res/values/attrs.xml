@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LongTextView">
+        <attr name="android:maxLines"/>
+        <attr name="android:textAppearance"/>
+        <attr name="android:text"/>
+    </declare-styleable>
+    <declare-styleable name="StateView">
+        <attr name="showErrorImage" format="boolean"/>
+        <attr name="showEmptyImage" format="boolean"/>
+        <attr name="targetView" format="reference" />
+    </declare-styleable>
+</resources>

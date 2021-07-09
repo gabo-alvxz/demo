@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_search_home">
+
+    <fragment
+        android:id="@+id/navigation_search_result_fragment"
+        android:name="com.gabo.finder.search.SearchResultsFragment"
+        tools:layout="@layout/search_results_fragment" >
+
+        <action
+            android:id="@+id/open_search_filters_dialog"
+            app:destination="@id/searchFiltersDialog" />
+        <action
+            android:id="@+id/open_item_from_search"
+            app:destination="@id/itemDetailsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/navigation_search_result_fragment"
+            app:popUpToSaveState="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_search_home"
+        android:name="com.gabo.finder.search.SearchHomeFragment"
+        android:label="@string/favorites"
+        tools:layout="@layout/search_home_fragment" >
+        <action
+            android:id="@+id/perform_search"
+            app:destination="@id/navigation_search_result_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/searchFiltersDialog"
+        android:name="com.gabo.finder.search.SearchFiltersDialog"
+        android:label="SearchFiltersDialog" >
+        <argument
+            android:name="searchParameters"
+            app:argType="com.gabo.finder.search.utils.SearchParameters" />
+    </dialog>
+    <fragment
+        android:id="@+id/itemDetailsFragment"
+        android:name="com.gabo.finder.item.ItemDetailsFragment"
+        android:label="ItemDetailsFragment" >
+        <argument android:name="itemId"
+            app:argType="string" />
+        <argument
+            android:name="item"
+            app:argType="com.gabo.models.models.item.Item"
+            app:nullable="true" />
+    </fragment>
+
+</navigation>

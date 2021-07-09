@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Finder</string>
+    <string name="search_label">Search</string>
+    <string name="search_title">What are you looking for?</string>
+    <string name="search_subtitle">Enter your search or pick a category bellow</string>
+    <string name="search_hint">Cars, Boats, Planes, etc…</string>
+    <string name="favorites">Favorites</string>
+    <string name="search_results">Search results</string>
+    <string name="filters">More filters</string>
+    <string name="search_result_row_availability">%s available</string>
+    <string name="search_result_count">%s results</string>
+    <string name="search_results_hint">Type your search here</string>
+    <string name="clear_filters">Clear filters (%d)</string>
+    <string name="filters_title">Edit Filters</string>
+    <string name="apply_filters">Apply filters</string>
+    <string name="go_back">Go back</string>
+    <string name="sort_by">Sort by</string>
+    <string name="view_page">View page</string>
+    <string name="item_description">Description</string>
+    <string name="more_info">More info</string>
+    <string name="show_all_attributes">Show all (%d)</string>
+    <string name="see_more">See more</string>
+    <string name="see_less">See less</string>
+    <string name="sold_by">Sold by</string>
+    <string name="buy">Buy</string>
+    <string name="share">Share</string>
+    <string name="share_item_title">Share %s</string>
+    <string name="share_item_message">Look at this awesome thing I found in a cool candidate app : %s</string>
+    <string name="loading_row_text">Please be patient…</string>
+    <string name="oh_no">Oh no!</string>
+    <string name="network_error_message">There was a problem</string>
+    <string name="retry">Retry</string>
+    <string name="no_results_title">No results were found</string>
+    <string name="no_results_message">Try with another search</string>
+    <string name="new_label">New</string>
+    <string name="used_label">Used</string>
+</resources>

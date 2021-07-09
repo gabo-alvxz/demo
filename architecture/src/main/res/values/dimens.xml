@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Text sizes  -->
+    <dimen name="text_xsmall">8sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_regular">16sp</dimen>
+    <dimen name="text_big">20sp</dimen>
+    <dimen name="text_heading_small">24sp</dimen>
+    <dimen name="text_heading_medium">28sp</dimen>
+    <dimen name="text_heading_large">32sp</dimen>
+    <!-- Margins -->
+    <dimen name="mg_4">4dp</dimen>
+    <dimen name="mg_8">8dp</dimen>
+    <dimen name="mg_16">16dp</dimen>
+    <dimen name="mg_24">24dp</dimen>
+    <dimen name="mg_32">32dp</dimen>
+    <dimen name="mg_48">48dp</dimen>
+    <dimen name="mg_64">64dp</dimen>
+    <!-- Paddings -->
+    <dimen name="pd_4">4dp</dimen>
+    <dimen name="pd_8">8dp</dimen>
+    <dimen name="pd_16">16dp</dimen>
+    <dimen name="pd_24">24dp</dimen>
+    <dimen name="pd_32">32dp</dimen>
+    <dimen name="pd_48">48dp</dimen>
+    <dimen name="pd_64">64dp</dimen>
+    <!--Others-->
+    <dimen name="card_corner_radius">2dp</dimen>
+    <dimen name="card_elevation">10dp</dimen>
+    <dimen name="large_titles_width">200dp</dimen>
+    <dimen name="search_results_row_image">100dp</dimen>
+</resources>

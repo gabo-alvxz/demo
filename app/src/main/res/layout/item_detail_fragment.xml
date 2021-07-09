@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/appbar_elevation"
+        android:theme="@style/appbar_theme"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scroll_view"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/image_gallery_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/image_gallery_height"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="?actionBarSize"
+                />
+
+            <TextView
+                android:id="@+id/item_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mg_16"
+                android:layout_marginTop="@dimen/mg_16"
+                android:layout_marginEnd="@dimen/mg_16"
+                android:textAppearance="@style/heading_large"
+                app:layout_constraintTop_toBottomOf="@id/image_gallery_recyclerview"
+                tools:text="Licuadora" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mg_8"
+                android:textAppearance="@style/heading_small"
+                android:textColor="?colorPrimary"
+                android:textSize="@dimen/text_heading_large"
+                app:layout_constraintStart_toStartOf="@id/item_title"
+                app:layout_constraintTop_toBottomOf="@id/item_title"
+                tools:text="$20000" />
+
+            <TextView
+                android:id="@+id/available_qty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/body_medium_bold"
+                app:layout_constraintStart_toStartOf="@id/item_title"
+                app:layout_constraintTop_toBottomOf="@id/price"
+                tools:text="6 disponibles" />
+
+            <com.gabo.finder.common.components.SellerView
+                android:id="@+id/seller_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mg_16"
+                android:layout_marginEnd="@dimen/mg_16"
+                android:paddingTop="@dimen/pd_16"
+                android:paddingBottom="@dimen/pd_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/available_qty" />
+
+            <TextView
+                android:id="@+id/description_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mg_16"
+                android:layout_marginTop="@dimen/mg_16"
+                android:layout_marginEnd="@dimen/mg_16"
+                android:text="@string/item_description"
+                android:textAppearance="@style/heading_small"
+                app:layout_constraintTop_toBottomOf="@id/seller_view" />
+
+
+            <com.gabo.finder.common.components.LongTextView
+                android:id="@+id/item_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mg_16"
+                android:layout_marginTop="@dimen/mg_8"
+                android:layout_marginEnd="@dimen/mg_16"
+                android:animateLayoutChanges="true"
+                android:maxLines="4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description_title" />
+
+            <TextView
+                android:id="@+id/attributes_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mg_16"
+                android:layout_marginTop="@dimen/mg_8"
+                android:layout_marginEnd="@dimen/mg_16"
+                android:text="@string/more_info"
+                android:textAppearance="@style/heading_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_description" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/attributes_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mg_16"
+                android:layout_marginTop="@dimen/mg_8"
+                android:layout_marginEnd="@dimen/mg_16"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/attributes_title" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buy_button"
+                style="@style/button_primary_round"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mg_16"
+                android:layout_marginTop="@dimen/mg_16"
+                android:layout_marginEnd="@dimen/mg_16"
+                android:layout_marginBottom="@dimen/mg_16"
+                android:text="@string/buy"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/attributes_recyclerview" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.gabo.finder.common.components.StateView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/state_view"
+        app:targetView="@id/scroll_view"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

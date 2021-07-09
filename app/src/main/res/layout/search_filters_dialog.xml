@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/bottom_sheet_dialog_margin_top"
+    android:paddingStart="@dimen/pd_16"
+    android:paddingEnd="@dimen/pd_16">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        app:layout_constraintBottom_toBottomOf="@id/footer"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_min="@dimen/bottom_sheet_dialog_height"
+        android:paddingBottom="@dimen/bottom_sheet_recycler_padding_bottom"
+        android:layout_height="0dp" />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        android:id="@+id/footer"
+        app:cardElevation="@dimen/card_elevation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:paddingTop="@dimen/pd_16"
+            android:paddingBottom="@dimen/pd_16"
+            android:gravity="center_vertical|end"
+            android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/apply_filters"
+            style="@style/button_primary_round"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mg_16"
+            android:layout_marginTop="@dimen/mg_16"
+            android:layout_marginEnd="@dimen/mg_8"
+            android:layout_marginBottom="@dimen/mg_16"
+            android:text="@string/apply_filters" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/body_medium_bold"
+                android:text="@string/go_back"
+                android:textColor="@color/link_color"
+                android:layout_marginEnd="@dimen/mg_16"
+                android:id="@+id/go_back"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

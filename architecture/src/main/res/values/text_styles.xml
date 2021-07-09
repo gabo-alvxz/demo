@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="body_small" parent="@android:style/TextAppearance">
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="body_medium" parent="body_small">
+        <item name="android:textSize">@dimen/text_regular</item>
+    </style>
+
+    <style name="body_small_bold" parent="body_small">
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="body_medium_bold" parent="body_medium">
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="toolbar_title" parent="body_medium">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="heading_large" parent="heading_small">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_heading_large</item>
+    </style>
+
+    <style name="heading_small" parent="body_small">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textColor">@color/grey_600</item>
+        <item name="android:textSize">@dimen/text_heading_small</item>
+    </style>
+
+    <style name="heading_small_light" parent="heading_small">
+        <item name="fontFamily">@font/roboto_light</item>
+        <item name="android:textColor">@color/grey_600</item>
+        <item name="android:textSize">@dimen/text_heading_medium</item>
+    </style>
+
+</resources>
